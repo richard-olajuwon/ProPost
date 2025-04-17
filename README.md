@@ -28,7 +28,7 @@ To run this project locally, follow these steps:
 
    ```bash
    git clone https://github.com/richard-olajuwon/propost.git
-   cd epistle
+   cd propost
    ```
 
 2. Set up a virtual environment:
