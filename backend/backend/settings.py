@@ -14,8 +14,22 @@ from pathlib import Path
 from datetime import timedelta
 from environs import Env
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 env = Env()
 env.read_env()
+
+# Cloudinary config
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME' : env.str('CLOUDINARY_NAME'),
+    'API_KEY' : env.str('CLOUDINARY_API_KEY'),
+    'API_SECRET' : env.str('CLOUDINARY_API_SECRET')
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,10 +105,21 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env.str('DB_NAME'), 
+        'USER': env.str('DB_USER'),    
+        'PASSWORD': env.str('DB_PASSWORD'),
+        'HOST': env.str('DB_HOST'),  
+        'PORT': env.int('DB_PORT'),                
     }
 }
 

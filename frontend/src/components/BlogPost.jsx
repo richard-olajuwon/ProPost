@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import BPost from "./BPost";
 import api from "../api";
 import Spinner from "./Spinner";
+
 const BlogPost = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -2,6 +2,9 @@
 
 ProPost is a full-stack blogging platform built with React on the frontend and Django on the backend. This project offers a comprehensive blogging experience with user authentication, rich-text editing for posts, tag filtering, and a user profile section. It's designed to provide an intuitive and seamless interface for both bloggers and readers.
 
+
+Live Website is Available on my <a href='https://richardgeek.com'>Portfolio</a>
+
 ## Features
 
 - **User Authentication:** Secure sign-up, login, and logout functionality.
@@ -35,7 +38,7 @@ To run this project locally, follow these steps:
 
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   venv/bin/activate  # On Mac use source `venv\Scripts\activate`
    ```
 
 3. Install the required Python packages:
