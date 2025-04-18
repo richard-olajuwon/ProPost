@@ -234,6 +234,9 @@ CORS_ALLOW_HEADERS = [
     'content-type',
     'authorization',
     'x-csrftoken',
+    'x-requested-with',
+    'Accept',
+    'Origin'
 ]
 
 CORS_ALLOW_CREDENTIALS = True  # Allow credentials like cookies or headers
