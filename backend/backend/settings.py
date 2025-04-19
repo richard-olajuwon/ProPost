@@ -214,11 +214,11 @@ SIMPLE_JWT = {
 }
 
 
-# CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True # For Development
 
 CORS_ALLOWED_ORIGINS = [
     'https://propostblog.netlify.app'
-]
+] # For Production
 
 
 CORS_ALLOW_METHODS = [

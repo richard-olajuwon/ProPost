@@ -14,6 +14,7 @@ const StartWriting = () => {
   const [status, setStatus] = useState("Active");
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -38,6 +39,7 @@ const StartWriting = () => {
 
   const handlePublish = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const formData = new FormData();
     formData.append("title", title);
@@ -61,6 +63,7 @@ const StartWriting = () => {
       navigate("/");
     } catch (error) {
       console.log(error.response.data); // Log the error details from the server
+      setLoading(false);
       setError(
         "Error occurred when publishing post: " +
           JSON.stringify(error.response.data)
@@ -141,8 +144,8 @@ const StartWriting = () => {
           <option value="Disabled">Disabled</option>
         </select>
         <div className="buttons-container">
-          <button type="submit" className="publish-button">
-            Publish
+          <button type="submit" className="publish-button" disabled = {loading}>
+            {loading ? 'Publishing...' : 'Publish'}
           </button>
         </div>
       </form>

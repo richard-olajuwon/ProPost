@@ -14,6 +14,7 @@ const Blogupdate = () => {
   const [status, setStatus] = useState("Active");
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
   const { slug } = useParams();
@@ -57,6 +58,7 @@ const Blogupdate = () => {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const formData = new FormData();
     formData.append("title", title);
@@ -79,6 +81,7 @@ const Blogupdate = () => {
 
       navigate(`/blogdetail/${slug}`);
     } catch (error) {
+      setLoading(false);
       console.log(error.response.data);
       setError(
         "Error occurred when updating post: " +
@@ -162,8 +165,8 @@ const Blogupdate = () => {
           <option value="Disabled">Disabled</option>
         </select>
         <div className="buttons-container">
-          <button type="submit" className="publish-button">
-            Publish
+          <button type="submit" className="publish-button" disabled={loading}>
+            {loading ? 'Publishing...' : 'Publish'}
           </button>
         </div>
       </form>

@@ -97,7 +97,7 @@ const Register = () => {
         </label>
         <div className="wrapper">
           <button type="submit" disabled={loading} className="submit">
-            {loading ? "loading..." : "Register"}
+            {loading ? "Registering..." : "Register"}
           </button>
         </div>
         <p className="signin">

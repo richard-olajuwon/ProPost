@@ -70,7 +70,7 @@ const Login = () => {
         </label>
         <div className="wrapper">
           <button disabled={loading} type="submit" className="submit">
-            {loading ? "loading..." : "Login"}
+            {loading ? "Logging In..." : "Login"}
           </button>
         </div>
         <p className="signin">

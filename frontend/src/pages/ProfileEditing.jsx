@@ -12,6 +12,7 @@ const ProfileEditing = () => {
   const [image, setImage] = useState(null);
   const [bio, setBio] = useState("");
   const [about, setAbout] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -40,6 +41,7 @@ const ProfileEditing = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const formData = new FormData();
     formData.append("full_name", full_name);
     if (image && typeof image === "object") {
@@ -57,6 +59,7 @@ const ProfileEditing = () => {
       });
       navigate(`/profile/${id}`);
     } catch (error) {
+      setLoading(false);
       console.log("Error during updating user profile", error);
     }
   };
@@ -115,7 +118,7 @@ const ProfileEditing = () => {
           onChange={(e) => setAbout(e.target.value)}
         ></textarea>
         <div className="buttons-container">
-          <button type="submit" className="publish-button">
+          <button type="submit" className="publish-button" disabled={loading}>
             Update
           </button>
         </div>

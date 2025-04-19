@@ -227,7 +227,6 @@ body.nav-active { overflow: hidden; }
 .headline .span {
   background-image: var(--gradient-1);
   display: inline-block;
-  -webkit-text-fill-color: transparent;
 }
 
 .btn {
