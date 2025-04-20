@@ -30,7 +30,7 @@ const Header = () => {
             <div className="navbar-top">
               <a href="#" className="logo">
                 <img
-                  src="./src/assets/images/logo.svg"
+                  src="../assets/images/logo.svg"
                   width="119"
                   height="37"
                   alt="Epistle logo"
@@ -97,9 +97,9 @@ const Header = () => {
                   src={
                     user
                       ? user.profile_image
-                      : "./src/assets/images/default-profile.png"
+                      : defaultProfileImage
                   }
-                  alt=""
+                  alt="User Image"
                 />
               </div>
             </Link>

@@ -310,7 +310,7 @@ body.nav-active { overflow: hidden; }
   #HEADER
 \*-----------------------------------*/
 
-.header .btn { display: none; }
+.header .btn { display: block; }
 
 .header {
   position: fixed;
@@ -467,7 +467,7 @@ body.nav-active { overflow: hidden; }
 
 .hero-bg { display: none; }
 
-.hero { padding-block-start: calc(var(--section-padding) + 160px); margin-bottom: 5rem; }
+.hero { padding-block-start: calc(var(--section-padding) + 50px); margin-bottom: 5rem; }
 
 .hero .container {
   display: flex;
@@ -1061,7 +1061,7 @@ body.nav-active { overflow: hidden; }
    */
 
   .header .btn {
-    display: block;
+    /* display: block; */
     margin-inline-start: auto;
   }
 
