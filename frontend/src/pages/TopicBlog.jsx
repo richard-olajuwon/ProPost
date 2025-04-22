@@ -79,14 +79,6 @@ const TopicBlog = () => {
           )}
         </div>
 
-        <img
-          src="./src/assets/images/shadow-3.svg"
-          width="500"
-          height="1500"
-          loading="lazy"
-          alt=""
-          className="feature-bg"
-        />
       </section>
       <Footer></Footer>
     </>
