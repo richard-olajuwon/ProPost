@@ -47,15 +47,6 @@ const BlogPost = () => {
             <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
           </Link>
         </div>
-
-        <img
-          src="./src/assets/images/shadow-3.svg"
-          width="500"
-          height="1500"
-          loading="lazy"
-          alt=""
-          className="feature-bg"
-        />
       </section>
     </>
   );

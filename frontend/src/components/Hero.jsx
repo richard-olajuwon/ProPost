@@ -34,21 +34,6 @@ const Hero = () => {
             </div>
           </div>
 
-          <img
-            src="./src/assets/images/shadow-1.svg"
-            width="500"
-            height="800"
-            alt=""
-            className="hero-bg hero-bg-1"
-          />
-
-          <img
-            src="./src/assets/images/shadow-2.svg"
-            width="500"
-            height="500"
-            alt=""
-            className="hero-bg hero-bg-2"
-          />
         </div>
       </section>
     </>
