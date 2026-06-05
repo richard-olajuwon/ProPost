@@ -15,7 +15,6 @@ import TopicBlog from "./pages/TopicBlog";
 import ProfileEditing from "./pages/ProfileEditing";
 import Blogupdate from "./pages/Blogupdate";
 
-
 function Logout() {
   localStorage.clear();
   return <Navigate to="/"></Navigate>;
@@ -35,7 +34,14 @@ function App() {
           <Route path="/blogposts" element={<Allblogposts />} />
           <Route path="/blogdetail/:slug" element={<Blogdetails />} />
           <Route path="/blogdetail/update/:slug" element={<Blogupdate />} />
-          <Route path="/startwriting" element={<Startwriting />} />
+          <Route
+            path="/startwriting"
+            element={
+              <ProtectedRoute>
+                <Startwriting />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/profile/:id"
             element={
